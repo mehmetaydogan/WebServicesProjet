@@ -7,15 +7,13 @@ package fr.unice.miage.ntdp.blog;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -29,7 +27,7 @@ public class Article implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String title;
-    private List<String> keywords;
+    private String keywords;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date published_on;
     private String content;
@@ -38,10 +36,10 @@ public class Article implements Serializable {
     private double position_latitude;
     private String position_name;
     private Status status;
-    @OneToMany
-    private List<Comment> comments;
+    @ManyToOne
+    private Users user;
 
-    public Article(String title, List<String> keywords, Date published_on, String content, String photo, double position_longitude, double position_latitude, String position_name, Status status, List<Comment> comments) {
+    public Article(String title, String keywords, Date published_on, String content, String photo, double position_longitude, double position_latitude, String position_name, Status status, Users user) {
         this.title = title;
         this.keywords = keywords;
         this.published_on = published_on;
@@ -51,20 +49,19 @@ public class Article implements Serializable {
         this.position_latitude = position_latitude;
         this.position_name = position_name;
         this.status = status;
-        this.comments = comments;
+        this.user = user;
     }
     
 
     public Article() {
     }
 
-    @XmlTransient
-    public List<Comment> getComments() {
-        return comments;
+    public Users getUser() {
+        return user;
     }
 
-    public void setComments(List<Comment> comments) {
-        this.comments = comments;
+    public void setUser(Users user) {
+        this.user = user;
     }
 
     public String getTitle() {
@@ -75,11 +72,11 @@ public class Article implements Serializable {
         this.title = title;
     }
 
-    public List<String> getKeywords() {
+    public String getKeywords() {
         return keywords;
     }
 
-    public void setKeywords(List<String> keywords) {
+    public void setKeywords(String keywords) {
         this.keywords = keywords;
     }
 

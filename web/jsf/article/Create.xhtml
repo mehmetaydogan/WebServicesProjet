@@ -15,6 +15,10 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateArticleLabel_user}" for="user" />
+                    <h:selectOneMenu id="user" value="#{articleController.selected.user}" title="#{bundle.CreateArticleTitle_user}" >
+                        <f:selectItems value="#{usersController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
                     <h:outputLabel value="#{bundle.CreateArticleLabel_title}" for="title" />
                     <h:inputText id="title" value="#{articleController.selected.title}" title="#{bundle.CreateArticleTitle_title}" />
                     <h:outputLabel value="#{bundle.CreateArticleLabel_keywords}" for="keywords" />

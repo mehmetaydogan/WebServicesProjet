@@ -43,8 +43,7 @@ public class Users implements Serializable {
     @ManyToOne
     private Role role;
 
-    public Users(List<Comment> comments, String firstname, String lastname, String about, String photo, String username, String password, Date last_connected, UserStatus userStatus, Role role) {
-        this.comments = comments;
+    public Users(String firstname, String lastname, String about, String photo, String username, String password, Date last_connected, UserStatus userStatus, Role role) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.about = about;

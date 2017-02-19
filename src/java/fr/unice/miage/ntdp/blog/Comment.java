@@ -31,14 +31,25 @@ public class Comment implements Serializable {
     private Date commented_date;
     @ManyToOne
     private Users user;
+    @ManyToOne
+    private Article article;
 
-    public Comment(String comment, Date commented_date, Users user) {
+    public Comment(String comment, Date commented_date, Users user, Article article) {
         this.comment = comment;
         this.commented_date = commented_date;
         this.user = user;
+        this.article = article;
     }
 
     public Comment() {
+    }
+
+    public Article getArticle() {
+        return article;
+    }
+
+    public void setArticle(Article article) {
+        this.article = article;
     }
 
     public Users getUser() {

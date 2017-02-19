@@ -15,6 +15,8 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewArticleLabel_user}"/>
+                    <h:outputText value="#{articleController.selected.user}" title="#{bundle.ViewArticleTitle_user}"/>
                     <h:outputText value="#{bundle.ViewArticleLabel_title}"/>
                     <h:outputText value="#{articleController.selected.title}" title="#{bundle.ViewArticleTitle_title}"/>
                     <h:outputText value="#{bundle.ViewArticleLabel_keywords}"/>

@@ -32,9 +32,7 @@
                         <f:convertDateTime pattern="MM/dd/yyyy" />
                     </h:inputText>
                     <h:outputLabel value="#{bundle.CreateUsersLabel_userStatus}" for="userStatus" />
-                    <h:selectOneMenu id="userStatus" value="#{usersController.selected.userStatus}" title="#{bundle.CreateUsersTitle_userStatus}" >
-                        <f:selectItems value="#{usersController.statusAvailableSelectOne}"/>
-                    </h:selectOneMenu>
+                    <h:inputText id="userStatus" value="#{usersController.selected.userStatus}" title="#{bundle.CreateUsersTitle_userStatus}" />
                     <h:outputLabel value="#{bundle.CreateUsersLabel_role}" for="role" />
                     <h:selectOneMenu id="role" value="#{usersController.selected.role}" title="#{bundle.CreateUsersTitle_role}" >
                         <f:selectItems value="#{roleController.itemsAvailableSelectOne}"/>

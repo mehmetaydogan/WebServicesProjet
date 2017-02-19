@@ -24,7 +24,7 @@ import javax.ws.rs.Produces;
  * @author AGLIF / AYDOGAN
  */
 @Stateless
-@Path("fr.unice.miage.ntdp.blog.role")
+@Path("role")
 public class RoleFacadeREST extends AbstractFacade<Role> {
     @PersistenceContext(unitName = "WebServicesProjetPU")
     private EntityManager em;

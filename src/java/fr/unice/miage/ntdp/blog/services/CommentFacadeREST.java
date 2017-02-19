@@ -24,7 +24,7 @@ import javax.ws.rs.Produces;
  * @author AGLIF / AYDOGAN
  */
 @Stateless
-@Path("fr.unice.miage.ntdp.blog.comment")
+@Path("comment")
 public class CommentFacadeREST extends AbstractFacade<Comment> {
     @PersistenceContext(unitName = "WebServicesProjetPU")
     private EntityManager em;

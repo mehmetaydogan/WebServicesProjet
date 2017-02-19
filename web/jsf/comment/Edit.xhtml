@@ -15,6 +15,10 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditCommentLabel_article}" for="article" />
+                    <h:selectOneMenu id="article" value="#{commentController.selected.article}" title="#{bundle.EditCommentTitle_article}" >
+                        <f:selectItems value="#{articleController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
                     <h:outputLabel value="#{bundle.EditCommentLabel_user}" for="user" />
                     <h:selectOneMenu id="user" value="#{commentController.selected.user}" title="#{bundle.EditCommentTitle_user}" >
                         <f:selectItems value="#{usersController.itemsAvailableSelectOne}"/>

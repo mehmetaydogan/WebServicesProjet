@@ -24,7 +24,7 @@ import javax.ws.rs.Produces;
  * @author AGLIF / AYDOGAN
  */
 @Stateless
-@Path("fr.unice.miage.ntdp.blog.users")
+@Path("users")
 public class UsersFacadeREST extends AbstractFacade<Users> {
     @PersistenceContext(unitName = "WebServicesProjetPU")
     private EntityManager em;
